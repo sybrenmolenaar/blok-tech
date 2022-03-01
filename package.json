@@ -19,10 +19,11 @@
   "homepage": "https://github.com/sybrenmolenaar/blok-tech#readme",
   "dependencies": {
     "camelcase": "^6.3.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }  
+  }
 }
