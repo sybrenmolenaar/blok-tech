@@ -1,0 +1,26 @@
+<head>
+    <%- include('includes/head'); -%>
+</head>
+
+<body>
+    <%- include('includes/header'); -%>
+
+    <div class="inner">
+
+        <main>
+            <h1><%= title %></h1>
+
+            <% restaurants.forEach(function(movie){ %>
+            <section>
+                <h2><%= restaurants.name %></h2>
+               
+            </section>
+            <% }) %>
+
+        </main>
+
+    </div>
+    <%- include('includes/footer'); -%>
+</body>
+
+</html>
