@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000;
-const restaurants =  [
+const restaurants = [
   {
           "id": 1,
           "slug": "Instock",
