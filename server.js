@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000;
-const restaurants = [
+const restaurants =  [
   {
           "id": 1,
           "slug": "Instock",
@@ -79,7 +79,7 @@ app.get('/restaurants/:id/:slug', (req, res) => {
   const restaurant = restaurants.find(element => element.id == id)
   console.log(restaurant)
   // RENDER PAGE
-  res.render('restaurantetails', {title: `details for restaurant ${restaurant.name}`, restaurant});
+  res.render('restaurantdetails', {title: `details for restaurant ${restaurant.name}`, restaurant});
 })
 
 app.get('/restaurant/add',  (req, res) => {
