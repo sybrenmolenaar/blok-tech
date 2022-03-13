@@ -1,7 +1,15 @@
 const express = require('express')
 const app = express()
 const port = 3000;
-const restaurants = [
+const dotenv = require('dotenv').config();
+const bodyParser = require('body-parser');
+
+const { MongoClient } = require('mongodb');
+const{ ObjectId } = require('mongodb');
+
+let db = null;
+console.log(process.env.TESTVAR);
+const haltes = [
   {
           "id": 1,
           "slug": "Instock",
@@ -67,16 +75,30 @@ const restaurants = [
         },
 ];
 
+
+app.get('/results', async (req, res) => {
+  //GET DATA FROM DATABASE
+  const query = {"name": "FEBO"}
+  const filtered = await db.collection('haltes').find(query).toArray();
+  console.log(filtered);
+  
+
+
+  // RENDER PAGE
+  const title  = (haltes.length == 0) ? "No stops were found" : "Stops";
+  res.render('restaurantlist', {restaurants: filtered, title: 'Restaurants'});
+})
+
 app.get('/',  (req, res) => {
   // RENDER PAGE
-  const title  = (restaurants.length == 0) ? "No restaurants were found" : "Restaurants";
-  res.render('restaurantlist', {title, restaurants});
+  const title  = "Find the best nearest stop for you!";
+   res.render('index', {title});
 })
 
 app.get('/restaurants/:id/:slug', (req, res) => {
   // FIND RESTAURANT
   const id = req.params.id
-  const restaurant = restaurants.find(element => element.id == id)
+  const restaurant = haltes.find(element => element.id == id)
   console.log(restaurant)
   // RENDER PAGE
   res.render('restaurantdetails', {title: `details for restaurant ${restaurant.name}`, restaurant});
@@ -93,10 +115,10 @@ app.post('/ditistijdelijk', (req,res) => {
       const restaurant = {
               name: req.body.name
       }
-      movies.push(restaurant);
-      console.log("this", restaurants);
+      movies.push(halte);
+      console.log("this", haltes);
       title = "Het is gelukt!";
-      res.render('restaurantlist', {title, restaurants});
+      res.render('restaurantlist', {title, haltes});
 })
 
 // app.get('/harriet', (req, res) => {
@@ -115,8 +137,26 @@ app.use(express.static('public'))
 
 app.set('view engine', 'ejs');
 
+async function connectDB() {
+
+  const uri = process.env.DB_URI;
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true,});
+  
+  try {
+  await client.connect();
+  
+  db = client.db(process.env.DB_NAME);
+  
+  } catch (error) {
+  
+  throw error;
+  
+  }
+  }
+
 app.listen(port, () =>   {
-  console.log(`Web server listening on http://localhost:${port}`) 
+  console.log(`Web server listening on http://localhost:${port}`)
+  connectDB().then( () => console.log('We have a connection with Mongo!')) 
 })
 
 app.use( (req, res) => {

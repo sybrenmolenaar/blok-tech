@@ -10,12 +10,19 @@
         <main>
             <h1><%= title %></h1>
 
-            <% restaurants.forEach(function(movie){ %>
+            <% haltes.forEach(function(haltes)){ %>
             <section>
-                <h2><%= restaurants.name %></h2>
+                <h2><%= haltes.name %></h2>
+                <fieldset>
+                    <legend>Informatie</legend>
+                    <label for="name">Name:</label>
+                    <input placeholder="Jan Jansen" type="text" id="name" name="user_name">
+                    <label for="mail">E-mail:</label>
+    <input placeholder="example@example.com" type="email" id="mail" name="user_email">
+                </fieldset>
                
             </section>
-            <% }) %>
+            
 
         </main>
 

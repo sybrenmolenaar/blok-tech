@@ -1,0 +1,59 @@
+[
+    {
+            "slug": "Instock",
+            "name": "Instock",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "slug": "waterkant",
+            "name": "Waterkant",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "slug": "mrandmrswatson",
+            "name": "Mr & Mrs Watson",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "slug": "volkshotel",
+            "name": "Volkhotel",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "slug": "tapastheater",
+            "name": "Tapas Theater",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "id": 6,
+            "slug": "tolhuistuin",
+            "name": "Tolhuistuin",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "id": 7,
+            "slug": "loetje",
+            "name": "Loetje",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+  {
+            "id": 8,
+            "slug": "tolhuistuin",
+            "name": "Tolhuistuin",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          },
+          {
+            "slug": "febo",
+            "name": "FEBO",
+            "facilities": ["wheelchair friendly stairs", "lift"],
+            "Reviews": "Good service, lovely people. Five stars"
+          }
+  ]

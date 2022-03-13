@@ -1,9 +1,42 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0;
-}
-
-nav ul {
-    display: flex;
+    margin: 0;
     
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header nav ul {
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+    color:white;
+    background-color: #FFFAD0;
+    height: 5%;
+    padding: 10px;
+    }
+
+footer nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color:white;
+    background-color: #FFFAD0;
+    position: sticky;
+    height: 5%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+

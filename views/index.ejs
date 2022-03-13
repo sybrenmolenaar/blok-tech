@@ -1,0 +1,28 @@
+<head>
+    <%- include('includes/head'); -%>
+</head>
+
+<body>
+    <%- include('includes/header'); -%>
+    <section>
+
+        <form action="">
+            <h2>Where do you want to travel from?</h2>
+            <fieldset>
+                <input placeholder="streetname or postalcode" type="text" name="name">
+            </fieldset>
+            <h2>What do you want the stop to include?</h2>
+            <fieldset>
+                <input type="radio" name="name">
+                <label for="generalaccess">Generally accessable</label><br>
+                <input type="radio" name="name">
+                <label for="wheelchair">Wheelchail accessable</label><br>
+                <input type="radio" name="name">
+                <label for="visual">Visually accessable</label><br>
+                <button>Find the best nearest stop for you!</button>
+            </fieldset>
+
+        </form>
+    </section>
+    <%- include('includes/footer'); -%>
+</body>
