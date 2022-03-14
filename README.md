@@ -10,7 +10,7 @@ As a developer and designer I'm all for inclusion, design needs to be accessable
 ## How to install StopFinder locally on your computer
 
 1. Create a folder in the documents folder of you local computer.
-2. Open your terminal. If you haven't already install homebrew using the following guide: 
+2. Open your terminal. If you haven't already, install git using the following guide: 
 3. In the terminal, go to the map using `cd./Documents/yourfoldername`. 
 4. In this map, clone the git repo using this commmand: `https://github.com/sybrenmolenaar/blok-tech`.
 5. Install the git package npm. 
@@ -20,4 +20,4 @@ As a developer and designer I'm all for inclusion, design needs to be accessable
 ## Code of conduct
 
 ## Licenses
-MIT
+I have chosen for a MIT license. 
