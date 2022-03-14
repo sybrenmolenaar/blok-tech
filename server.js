@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000;
+const port = process.env.PORT || 3000;
 const dotenv = require('dotenv').config();
 const bodyParser = require('body-parser');
 
@@ -153,6 +153,15 @@ async function connectDB() {
   
   }
   }
+
+app.post("/get-locations", (req, res) => { 
+  // Data uit form halen
+  
+  // Data gebruiken om fetch te doen 
+
+  // Pagina opnieuw weergeven met data
+
+})
 
 app.listen(port, () =>   {
   console.log(`Web server listening on http://localhost:${port}`)

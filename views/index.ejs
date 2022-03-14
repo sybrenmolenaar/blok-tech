@@ -6,7 +6,7 @@
     <%- include('includes/header'); -%>
     <section>
 
-        <form action="">
+        <form action="/get-locations" method="post">
             <h2>Where do you want to travel from?</h2>
             <fieldset>
                 <input placeholder="streetname or postalcode" type="text" name="name">
@@ -19,10 +19,17 @@
                 <label for="wheelchair">Wheelchail accessable</label><br>
                 <input type="radio" name="name">
                 <label for="visual">Visually accessable</label><br>
-                <button>Find the best nearest stop for you!</button>
+                <input type="submit" name="submit" value="Find the best nearest stop for you!">
             </fieldset>
-
         </form>
+
+        <!-- Als je locations meegeeft laat dan deze lijst zien -->
+
+        <ul id="locations">
+
+        </ul>
     </section>
     <%- include('includes/footer'); -%>
+
+    <script src="global.js"></script>
 </body>
