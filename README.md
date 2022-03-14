@@ -16,3 +16,8 @@ As a developer and designer I'm all for inclusion, design needs to be accessable
 5. Install the git package npm. 
 6. In the terminal type `git install npm`.
 7. Now it's time to run the app. In the terminal type `npm start`. This will start the application. You will now be able to run the app listening on localhost:3000.
+
+## Code of conduct
+
+## Licenses
+MIT
