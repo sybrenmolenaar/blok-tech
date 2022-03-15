@@ -7,6 +7,9 @@ All students had to think about a concept for a matching app that they wanted to
 
 As a developer and designer I'm all for inclusion, design needs to be accessable for everyone in any situation. That's why I came up with this concept. 
 
+![Screenshot StopFinder](https://github.com/sybrenmolenaar/blok-tech/blob/main/Pictures/Screenshot%202022-03-13%20at%2015.18.01.png?raw=true)
+
+
 ## How to install StopFinder locally on your computer
 
 1. Create a folder in the documents folder of you local computer.
