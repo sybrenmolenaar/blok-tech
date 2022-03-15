@@ -17,7 +17,7 @@ header nav ul {
     justify-content: space-around;
     list-style: none;
     color: white;
-    background-color: #FFFAD0;
+    background-color: grey;
     height: 15px;
     padding: 10px;
     text-decoration: none;
@@ -27,11 +27,16 @@ footer nav ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    color: white;
-    background-color: #FFFAD0;
+    background-color: grey;
     position: sticky;
-    height: 10px;
+    height: auto;
     text-decoration: none;
+}
+
+li a image {
+    text-decoration: none;
+    color: white;
+    
 }
 
 
@@ -39,10 +44,39 @@ section {
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 10rem;
+    bottom: 8rem;
+    text-align: center;
+
 }
 
-input[type=submit] {
-    padding: 5px,10px;
+fieldset {
+    border: none;
+}
 
+form input[type="text"] {
+    text-align: center;
+    width: 80%;
+    padding: 5px;
+    margin: 20px;
+
+}
+
+form input[type="submit"] {
+    margin-top: 20px;
+    text-align: center;
+    width: 80%;
+    padding: 5px;
+    margin: 20px;
+    border: 0;
+    background-color: grey;
+    color: white;
+    border-radius: 3px;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgb(71, 71, 71);
+}
+
+form input[type="radio"] {
+    margin: 10px;
 }

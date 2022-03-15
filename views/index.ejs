@@ -9,15 +9,15 @@
         <form action="/get-locations" method="post">
             <h2>Where do you want to travel from?</h2>
             <fieldset>
-                <input placeholder="streetname or postalcode" type="text" name="name">
+                <input placeholder="streetname or postal code" type="text" name="location">
             </fieldset>
             <h2>What do you want the stop to include?</h2>
             <fieldset>
-                <input type="radio" name="name">
+                <input id= "generalaccess" type="radio" name="general">
                 <label for="generalaccess">Generally accessable</label><br>
-                <input type="radio" name="name">
+                <input type="radio" name="wheelchair">
                 <label for="wheelchair">Wheelchail accessable</label><br>
-                <input type="radio" name="name">
+                <input type="radio" name="visual">
                 <label for="visual">Visually accessable</label><br>
                 <input type="submit" name="submit" value="Find the best nearest stop for you!">
             </fieldset>

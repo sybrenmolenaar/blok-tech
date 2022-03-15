@@ -156,7 +156,8 @@ async function connectDB() {
 
 app.post("/get-locations", (req, res) => { 
   // Data uit form halen
-  
+  const location = req.query.location;
+
   // Data gebruiken om fetch te doen 
 
   // Pagina opnieuw weergeven met data
