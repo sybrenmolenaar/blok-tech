@@ -10,14 +10,17 @@ As a developer and designer I'm all for inclusion, design needs to be accessable
 ## How to install StopFinder locally on your computer
 
 1. Create a folder in the documents folder of you local computer.
-2. Open your terminal. If you haven't already, install git using the following guide: 
+2. Open your terminal. If you haven't already, install node and git using these commands. Installing node typing `node install` in the terminal, and after that type `node --version` to see what version of git you are running and to get a comfirmation that it works. Then do the same with git. Type `git install` and after that `git --version`.
 3. In the terminal, go to the map using `cd./Documents/yourfoldername`. 
 4. In this map, clone the git repo using this commmand: `https://github.com/sybrenmolenaar/blok-tech`.
 5. Install the git package npm. 
 6. In the terminal type `git install npm`.
 7. Now it's time to run the app. In the terminal type `npm start`. This will start the application. You will now be able to run the app listening on localhost:3000.
 
-## Code of conduct
+## This web app is build with
+- Node.js
+- EJS
+- Express
 
 ## Licenses
 I have chosen for a MIT license. 
