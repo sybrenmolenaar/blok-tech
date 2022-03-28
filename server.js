@@ -158,11 +158,26 @@ app.post("/get-locations", (req, res) => {
   // Data uit form halen
   const location = req.query.location;
 
+  fetch('https://maps.amsterdam.nl/open_geodata/geojson_lnglat.php?KAARTLAAG=TRAMMETRO_PUNTEN_2021&THEMA=trammetro')
+  .then(data => console.log(data))
+  .catch(err => console.log(err))
+
+console.log('test');
+
   // Data gebruiken om fetch te doen 
+// fetch('https://maps.amsterdam.nl/open_geodata/geojson_lnglat.php?KAARTLAAG=TRAMMETRO_PUNTEN_2021&THEMA=trammetro').then(data => {
+//   console.log();
+//   return data.json();
+// }).then(locations => {
 
-  // Pagina opnieuw weergeven met data
+//   locations.
+//   res.render('index', {
+//     locaties: locations
+//   })
+// })
+//   // Pagina opnieuw weergeven met data
 
-})
+// })
 
 app.listen(port, () =>   {
   console.log(`Web server listening on http://localhost:${port}`)
@@ -174,4 +189,4 @@ app.use( (req, res) => {
 })
 
 
-
+})

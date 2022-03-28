@@ -29,14 +29,15 @@ footer nav ul {
     list-style: none;
     background-color: grey;
     position: sticky;
-    height: auto;
+    height: 10px;
     text-decoration: none;
 }
 
-li a image {
+footer ul li a image {
+    display: flex;
     text-decoration: none;
     color: white;
-    
+    height: 10px;
 }
 
 
