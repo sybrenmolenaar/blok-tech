@@ -28,16 +28,15 @@ footer nav ul {
     justify-content: space-around;
     list-style: none;
     background-color: grey;
-    position: sticky;
-    height: 10px;
+    /* position: fixed; */
+    height: 3rem;
     text-decoration: none;
 }
 
-footer ul li a image {
-    display: flex;
-    text-decoration: none;
-    color: white;
-    height: 10px;
+
+.icon {
+    height: 100%;
+
 }
 
 
