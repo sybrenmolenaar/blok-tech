@@ -2,7 +2,7 @@
   "name": "blok-tech",
   "version": "1.0.0",
   "description": "Hele mooie package",
-  "main": "helloworld.js", 
+  "main": "server.js", 
   "type": "module",
   "scripts": {
     "start": "node server.js",
