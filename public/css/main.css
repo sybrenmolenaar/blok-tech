@@ -8,8 +8,8 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    justify-content: space-between; 
+    height: 100vh; 
 }
 
 header nav ul {
@@ -43,7 +43,7 @@ footer nav ul {
 section {
     display: flex;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     bottom: 8rem;
     text-align: center;
 
@@ -79,4 +79,10 @@ form input[type="submit"]:hover {
 
 form input[type="radio"] {
     margin: 10px;
+}
+
+#locations {
+    list-style: none;
+    text-align: left;
+    display: block;
 }

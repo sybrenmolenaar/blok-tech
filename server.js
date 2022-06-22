@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import fetch from "node-fetch";
 
 
+
 import {
   MongoClient,
   ObjectId
@@ -105,12 +106,37 @@ app.get('/results', async (req, res) => {
   });
 })
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   // RENDER PAGE
   const title = "Find the best nearest stop for you!";
+
+  const type = req.query.type;
+
+  // if (type) {
+
+  console.log('post request received')
+  // Data uit form halen
+  // const travelLocation = req.body.location;
+  // const formOfTransport = req.body.transportType;
+  // console.log('formOfTransport', formOfTransport)
+  const result = await getData(type) // get data from API, and we still have to pass the data to the matchData and eventually renderResults function
+
+  console.log(result.length)
+
+  // res.send(result);
   res.render('index', {
-    title
-  });
+    stops: result,
+    title: 'success'
+  })
+
+
+  // return
+  // }
+
+  // res.render('index', {
+  //   title,
+  //   stops: []
+  // });
 
 
 });
@@ -167,16 +193,11 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs');
 
 
-app.post("/get-locations", (req, res) => {
-  console.log('post request received')
-  // Data uit form halen
-  const travelLocation = req.body.location;
-  const formOfTransport = req.body.transportType;
-
-  getData() // get data from API, and we still have to pass the data to the matchData and eventually renderResults function
 
 
-});
+
+
+
 
 
 // Data gebruiken om fetch te doen 
@@ -201,17 +222,12 @@ app.use((req, res) => {
 });
 
 
-function getData() {
+function getData(formOfTransport) {
   console.log("getData function wordt nu uitgevoerd")
-  fetch('https://maps.amsterdam.nl/open_geodata/geojson_lnglat.php?KAARTLAAG=TRAMMETRO_PUNTEN_2021&THEMA=trammetro') // fetch data from API
+  return fetch('https://maps.amsterdam.nl/open_geodata/geojson_lnglat.php?KAARTLAAG=TRAMMETRO_PUNTEN_2021&THEMA=trammetro') // fetch data from API
     .then(res => res.json()) // Convert data to json
     .then(jsonData => cleanData(jsonData)) // clean the data
-    .then(cleanedData => matchData(cleanedData)) // matches the data from the api with the data from form input
-    .then(finalData => {
-      console.log(finalData)
-      renderResults(finalData) // render the data
-      return finalData
-    })
+    .then(cleanedData => matchData(cleanedData, formOfTransport)) // matches the data from the api with the data from form input
     .catch(err => console.log(err)) // catch errors if the two functions above fail
 };
 
@@ -243,45 +259,26 @@ function cleanData(data) {
   return transportArray
 }
 
-function matchData(data) {
-  console.log('matchData function wordt nu uitgevoerd')
-  console.log(data)
-  const submitForm = document.querySelector('ptForm'); //get the input data from the form on the page
-  const bus = document.querySelector('bus');
-
-  ptForm.addEventListener('submit', (e) => {
-    e.preventDefault(); //prevent the browser from going to another page once the form is submitted
-
-    if (document.querySelector('bus').checked = data.transportItem.properties.Modaliteit("Bus")) {
-      console.log("We hebben een bus!")
-    }
-
-
-
-
-
-    matchData();
-  });
-
-
-
-
-
-
-
+function matchData(data, formOfTransport) {
   // match the location & transport form with the data from the api and return matched results
+  console.log('matchData function wordt nu uitgevoerd')
+  console.log('We willen dit hebben: ', formOfTransport);
+  console.log('# data:',
+    data.length);
+
+  return data.filter((item) => item.modaliteit.toLowerCase() === formOfTransport)
 };
 
 
-function renderResults(element, data) {
-  console.log('renderResults function wordt nu uitgevoerd')
-  document.querySelector(element).innerHTML = data;
-  return data = `
-  <h2>Your best options are: ${transportItem.properties.Naam}</h2>
- <p>this is a ${transportItem.properties.Modaliteit}</p>`
+// function renderResults(element, data) {
+//   console.log('renderResults function wordt nu uitgevoerd')
+//   document.querySelector(element).innerHTML = data;
+//   return data = `
+//   <h2>Your best options are: ${transportItem.properties.Naam}</h2>
+//  <p>this is a ${transportItem.properties.Modaliteit}</p>`
 
 
-};
+// };
 
 
 async function connectDB() {

@@ -5,26 +5,36 @@
 <body>
     <%- include('includes/header'); -%>
     <section>
-        <form action="/get-locations" method="post" id="ptForm">
+        <form action="/" method="GET" id="ptForm">
             <h2>Where do you want to travel from?</h2>
             <fieldset>
                 <input placeholder="streetname or postal code" type="text" name="location">
             </fieldset>
             <fieldset>
                 <h2>What form of transport do you want to travel with?</h2>
-                <input type="radio" id="bus" name="transportType" value="bus" checked>
-                <label for="bus">Bus</label>
-                <input type="radio" id="tram" name="transportType" value="tram">
+                <input type="radio" id="tram" name="type" value="tram">
                 <label for="tram">Tram</label>
-                <input type="radio" id="metro" name="transportType" value="metro">
+                <input type="radio" id="metro" name="type" value="metro">
                 <label for="metro">Metro</label>
             </fieldset>
             <input type="submit" value="submit">
         </form>
+
+
+        <% if (stops.length) { %>
         <!-- Als je locations meegeeft laat dan deze lijst zien -->
         <ul id="locations">
+            <% stops.forEach(stop => { %>
+            <li>
+                <strong><%- stop.naam  %></strong>
+                <p><%- stop.lijn  %></p>
 
+            </li>
+            <% }) %>
         </ul>
+        <% } %>
+
+
     </section>
     <%- include('includes/footer'); -%>
     <script src="global.js"></script>
