@@ -5,11 +5,8 @@
 <body>
     <%- include('includes/header'); -%>
     <section>
-        <form action="/" method="GET" id="ptForm">
-            <h2>Where do you want to travel from?</h2>
-            <fieldset>
-                <input placeholder="streetname or postal code" type="text" name="location">
-            </fieldset>
+        <form action="filter" method="POST" id="ptForm">
+
             <fieldset>
                 <h2>What form of transport do you want to travel with?</h2>
                 <input type="radio" id="tram" name="type" value="tram">
@@ -25,10 +22,22 @@
         <!-- Als je locations meegeeft laat dan deze lijst zien -->
         <ul id="locations">
             <% stops.forEach(stop => { %>
-            <li>
+            <li class="stops">
                 <strong><%- stop.naam  %></strong>
                 <p><%- stop.lijn  %></p>
 
+                <% if (likes.includes(stop.id)){ %>
+                <!-- als het in de likeslijst in de database staat wordt het een dislike button --> -->
+                <form method="POST" action="/dislikestop">
+                    <button name="id" type="submit" value="<%= stop.id %>">Dislike dit</button>
+                </form>
+                <% } else {%>
+                <form method="POST" action="/likestop">
+                    <button name="id" type="submit" value="<%= stop.id %>">Like dit</button>
+                </form>
+                <% }%>
+                <!-- Wilde een pop-op maken met icoontjes. Gebruiker kon aangeven of haltes toegankelijk waren of niet. -->
+                <!-- <button><img src="images/disabled.svg" alt=""></button> -->
             </li>
             <% }) %>
         </ul>
@@ -37,5 +46,6 @@
 
     </section>
     <%- include('includes/footer'); -%>
-    <script src="global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/haversine-distance@1.2.1/index.min.js"></script>
+    <script type="module" src="global.js"></script>
 </body>

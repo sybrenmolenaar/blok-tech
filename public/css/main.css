@@ -8,7 +8,7 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    /* justify-content: space-between;  */
     height: 100vh; 
 }
 
@@ -43,9 +43,11 @@ footer nav ul {
 section {
     display: flex;
     justify-content: center;
-    /* position: relative; */
-    bottom: 8rem;
-    text-align: center;
+    flex-direction: column;
+
+    /* position: relative;  */
+    /* bottom: 8rem; */
+    text-align: center; 
 
 }
 
@@ -83,6 +85,7 @@ form input[type="radio"] {
 
 #locations {
     list-style: none;
-    text-align: left;
-    display: block;
+    text-align: center;
+    display: block; 
+    position: relative;
 }
