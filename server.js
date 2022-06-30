@@ -118,6 +118,7 @@ app.post("/filter", async (req, res) => {
   const data = await getData(req.body.type);
   //get the data from the API, wait for the response of the API before you send the content.
   console.log(data);
+  const likes = await db.collection('matches').find({}, {}).toArray()
 
   res.render('index', { //render the data on the page, show the stops and the title.
     stops: data,
